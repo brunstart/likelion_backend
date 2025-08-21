@@ -8,7 +8,7 @@ public class LabelExam {
             for(int k = 0; k < 3; k++){
                 if(i == 0 && k == 2)
                     break outter; // 바깥쪽 반복문까지 종료
-//                System.out.println(i + ", " + k);
+                System.out.println(i + ", " + k);
             }
         }
 
