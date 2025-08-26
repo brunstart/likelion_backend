@@ -17,6 +17,6 @@ public class Pen {
 class BallPen extends Pen{
     public void write(String msg)
     {
-        System.out.println("bb");
+        System.out.println("BallPen write");
     }
 }
