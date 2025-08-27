@@ -43,5 +43,9 @@ public class MyClass {
 //        equals를 사용
         System.out.println("==============equals==============");
         System.out.println(myClass.equals(myClass2));   // false가 출력됨 -> Object가 의미 없는 equals를 사용했기 때문
+
+        System.out.println(myClass2.hashCode());
+        myClass2.name = "kim";
+        System.out.println(myClass2.hashCode());
     }
 }
