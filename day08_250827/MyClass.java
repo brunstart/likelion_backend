@@ -14,7 +14,7 @@ public class MyClass {
     public boolean equals(Object o)
     {
         if (o == null || getClass() != o.getClass()) return false;
-        MyClass myClass = (MyClass) o;
+        MyClass myClass = (MyClass) o;      // 필드는 타입을 따르기 때문에 Object 타입으로는 name에 접근을 못하기 때문에 MyClass로 형변환함
         return Objects.equals(name, myClass.name);
     }
 
