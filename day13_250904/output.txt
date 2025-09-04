@@ -1,0 +1,6 @@
+1: input TEST
+2: 1st line Hello World
+3: 2nd line JAVA Programming
+4: 3rd LINE UPPERCASE
+5: 한글 인식 테스트
+6: 가나다라마바사아자차카타파하

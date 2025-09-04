@@ -1,0 +1,6 @@
+input TEST
+1st line Hello World
+2nd line JAVA Programming
+3rd LINE UPPERCASE
+한글 인식 테스트
+가나다라마바사아자차카타파하
