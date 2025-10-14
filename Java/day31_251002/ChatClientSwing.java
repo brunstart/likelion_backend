@@ -84,7 +84,7 @@ public class ChatClientSwing extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             // ChatClientSwing client = new ChatClientSwing("15.164.228.241", 8888);
-            ChatClientSwing client = new ChatClientSwing("127.0.0.1", 12345);
+            ChatClientSwing client = new ChatClientSwing("127.0.0.1", 54321);
             client.setVisible(true);
         });
     }

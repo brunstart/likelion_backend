@@ -19,10 +19,6 @@ public class ChatServer {
             }else{
                 client.sendMessage("내가 보낸 메시지 ::" + message);
             }
-
-            // if (client != sender) {
-            //     client.sendMessage(message);
-            // }
         }
     }
 
@@ -57,6 +53,16 @@ public class ChatServer {
             }
         }
 
+        private void notification() {
+            this.sendMessage("==================== 채팅 사용법 ====================");
+            this.sendMessage("1. 일반 메시지: 내용을 입력 후 엔터");
+            this.sendMessage("2. 귓속말: /to [대상닉네임] [내용] 형식으로 입력");
+            this.sendMessage("   예) /to userA 안녕하세요.");
+            this.sendMessage("3. 종료: bye 를 입력 후 엔터");
+            this.sendMessage("4. 도움말: /help 를 입력 후 엔터");
+            this.sendMessage("==================================================");
+        }
+
         @Override
         public void run() {
             try(BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -73,6 +79,8 @@ public class ChatServer {
 
                 System.out.println(nickname + "님 입장");
 
+                notification();     // 채팅 사용법 공지
+
                 // 채팅방에 있는 전체 사용자에게 알리고 싶다.
                 broadcast(nickname+" 님 입장", this);
 
@@ -81,17 +89,22 @@ public class ChatServer {
                     if ("bye".equalsIgnoreCase(message)) {
                         break;
                     }
-                    broadcast(message, this);
+                    else if ("/help".equalsIgnoreCase(message)) {   // 사용법 호출
+                        notification();
+                    }
+                    else {
+                        broadcast(message, this);
+                    }
                 }
             }catch (Exception e) {
                 System.out.println(e.getMessage());
             }finally {
-                
+
                 if (nickname != null) {
-                    System.out.println(nickname + " 님 퇴장");
-                    broadcast(nickname + " 님 퇴장", this);
+                    System.out.println(nickname + "님 퇴장");
+                    broadcast(nickname + "님 퇴장", this);
                 }
-                
+
                 // try{
                 //     out.close();
                 // }catch (Exception e) {
